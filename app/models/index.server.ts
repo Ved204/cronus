@@ -15,9 +15,9 @@ export async function getMessage(): Promise<Message> {
     prompt: "tell me a joke a knock knock joke",
     temperature: 1,
     max_tokens: 250,
-    top_p: 0.5,
-    frequency_penalty: 1.5,
-    presence_penalty: 1.5,
+    top_p: 1,
+    frequency_penalty: 0,
+    presence_penalty: 0,
   });
   return { text: response.data.choices[0].text };
 }
