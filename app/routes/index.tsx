@@ -1,5 +1,4 @@
-import { json } from "@remix-run/node";
-import { useLoaderData } from "remix";
+import { useLoaderData, json } from "remix";
 import { useOptionalUser } from "~/utils";
 
 import { getMessage } from "~/models/index.server";
