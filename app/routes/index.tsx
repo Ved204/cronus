@@ -5,7 +5,7 @@ import { useOptionalUser } from "~/utils";
 import { getMessage } from "~/models/index.server";
 
 export const loader = async () => {
-  return json({ message; await getMessage() });
+  return json({ message: await getMessage() });
 }
 
 export default function Index() {
