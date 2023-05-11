@@ -1,4 +1,4 @@
-type Message {
+type Message = {
   text: string; 
 };
 
