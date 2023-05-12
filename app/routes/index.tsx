@@ -1,4 +1,4 @@
-import { useLoaderData, json, useNavigate } from "remix";
+import { useLoaderData, json, useNavigate, useTransition } from "remix";
 import { useOptionalUser } from "~/utils";
 import { getMessage } from "~/models/index.server";
 
@@ -10,9 +10,15 @@ export default function Index() {
   const user = useOptionalUser();
   const { message } = useLoaderData<typeof loader>();
   const navigate = useNavigate();
+  const transition = useTransition();
   const reload = () => {
     navigate('/', { replace: true }); // Navigate to the current URL (reload)
   };
+
+  if (transition.state === "loading") { 
+    return null;
+  }
+
   return (
     <main className="relative min-h-screen bg-white flex flex-col sm:items-center sm:justify-center">
       <div className="relative sm:pb-16 sm:pt-8">
