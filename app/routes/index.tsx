@@ -15,6 +15,11 @@ export default function Index() {
       <div className="relative sm:pb-16 sm:pt-8">
         {message.text}
       </div>
+      <div>
+        <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+          Tell me another
+        </button>
+      </div>
     </main>
   );
 }
