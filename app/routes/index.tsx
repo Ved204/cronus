@@ -15,14 +15,10 @@ export default function Index() {
     navigate('/', { replace: true }); // Navigate to the current URL (reload)
   };
 
-  if (transition.state === "loading") { 
-    return null;
-  }
-
   return (
     <main className="relative min-h-screen bg-white flex flex-col sm:items-center sm:justify-center">
       <div className="relative sm:pb-16 sm:pt-8">
-        {message.text}
+        {transition.state === "loading" ? 'Thinking of a new joke...' : message.text}
       </div>
       <div>
         <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full" onClick={reload}>
