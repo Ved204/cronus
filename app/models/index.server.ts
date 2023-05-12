@@ -10,14 +10,9 @@ type Message = {
 };
 
 export async function getMessage(): Promise<Message> {
-  const response = await openai.createCompletion({
-    model: "text-davinci-003",
-    prompt: "tell me a joke a knock knock joke",
-    temperature: 1,
-    max_tokens: 250,
-    top_p: 1,
-    frequency_penalty: 0,
-    presence_penalty: 0,
+  const completion = await openai.createChatCompletion({
+    model: "gpt-3.5-turbo",
+    messages: [{role: "system", content: "You a comedian, only reply in jokes"}, {role: "user", content: "Tell me a joke"}],
   });
-  return { text: response.data.choices[0].text };
+  return { text: completion.data.choices[0].message?.content };
 }
