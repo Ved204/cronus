@@ -1,6 +1,5 @@
-import { useLoaderData, json, useNavigate, Form } from "remix";
+import { useLoaderData, json, useNavigate } from "remix";
 import { useOptionalUser } from "~/utils";
-
 import { getMessage } from "~/models/index.server";
 
 export const loader = async () => {
@@ -19,11 +18,11 @@ export default function Index() {
       <div className="relative sm:pb-16 sm:pt-8">
         {message.text}
       </div>
-      <Form method="get">
-        <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+      <div>
+        <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full" onClick={reload}>
           Tell me another
         </button>
-      </Form>
+      </div>
     </main>
   );
 }
