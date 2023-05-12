@@ -16,7 +16,7 @@ export default function Index() {
         {message.text}
       </div>
       <div>
-        <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full" onClick={location.reload}>
+        <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full" onClick={window.location.reload}>
           Tell me another
         </button>
       </div>
